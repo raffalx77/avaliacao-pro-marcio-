@@ -1,83 +1,129 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SETEC - Futuro e Tecnologia</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Curso de Desenvolvimento de Sistemas - SETEC</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header>
-        <h1>SETEC - Evento de Tecnologia e Futuro</h1>
-        <p>Explorando o futuro da Inteligência Artificial</p>
+        <div class="logo-container">
+            <img src="imagens/logo-setec.png" alt="Logo SETEC" class="logo">
+            <h1>Curso de Desenvolvimento de Sistemas</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre-curso">Sobre o Curso</a></li>
+                <li><a href="#temas-ia">Temas de IA</a></li>
+                <li><a href="#setec-futuro">SETEC Futurista</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        
-        <!-- Seção 1: Curso de Data Science -->
-        <section id="data-science">
-            <h2>O fascinante universo de Data Science</h2>
-            <p>No mundo atual, onde o volume de informações cresce exponencialmente, a **Data Science** emerge como a chave para transformar dados brutos em conhecimento acionável. É uma área multidisciplinar que combina estatística, matemática e ciência da computação para extrair insights valiosos, permitindo prever tendências e tomar decisões mais inteligentes. O curso de Data Science prepara você para se tornar um profissional essencial na era da informação.</p>
-            <p>Durante a jornada de aprendizado, você dominará ferramentas e linguagens poderosas, como **Python** e **R**, e explorará bibliotecas como **Pandas** e **Scikit-learn**. Você aprenderá a modelar dados, a construir algoritmos de **Machine Learning** e a criar visualizações de dados que comunicam descobertas de forma clara e impactante. Esta é uma carreira com alta demanda e infinitas possibilidades em diversos setores, de finanças à saúde.</p>
-            
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/pE9lTz26yYg" title="O que é Data Science? - Ciência de Dados" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            
-        </section>
-
-        <hr>
-
-        <!-- Seção 2: Temas de IA -->
-        <section id="ia-temas">
-            <h2>Quatro temas que definem o futuro da IA</h2>
-            <div class="ia-grid">
-                <article>
-                    <h3>1. Aprendizado de Máquina (Machine Learning)</h3>
-                    <p>É a base da IA moderna. O **Machine Learning** é a capacidade de um sistema aprender e melhorar a partir da experiência sem ser explicitamente programado. Isso impulsiona tudo, desde recomendações de streaming até a detecção de fraudes, permitindo que a tecnologia se adapte e evolua.</p>
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/K8w-fD1m868" title="O que é Machine Learning e como funciona?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- PRIMEIRA SEÇÃO: SOBRE O CURSO DE DS -->
+        <section id="sobre-curso" class="section">
+            <div class="container">
+                <h2>Curso Técnico em Desenvolvimento de Sistemas</h2>
+                <div class="content-wrapper">
+                    <div class="text-content">
+                        <p>O curso técnico em Desenvolvimento de Sistemas da SETEC prepara os estudantes para atuarem no desenvolvimento de software, abrangendo desde a análise de requisitos até a implementação e manutenção de sistemas computacionais.</p>
+                        
+                        <p>Com uma abordagem prática e atualizada, o curso aborda linguagens de programação, banco de dados, desenvolvimento web, mobile e muito mais, sempre alinhado às demandas do mercado de trabalho.</p>
+                        
+                        <p>Nossa grade curricular inclui:</p>
+                        <ul>
+                            <li>Lógica de programação e algoritmos</li>
+                            <li>Desenvolvimento front-end e back-end</li>
+                            <li>Banco de dados e SQL</li>
+                            <li>Engenharia de software e metodologias ágeis</li>
+                            <li>Desenvolvimento mobile</li>
+                            <li>Inteligência Artificial aplicada</li>
+                        </ul>
                     </div>
-                </article>
-                <article>
-                    <h3>2. Visão Computacional (Computer Vision)</h3>
-                    <p>Esta área ensina os computadores a "ver" e interpretar imagens e vídeos. É a tecnologia por trás dos carros autônomos, do reconhecimento facial e da análise de imagens médicas, permitindo que as máquinas entendam o mundo visual ao nosso redor.</p>
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://youtu.be/S6js-kYP72M?feature=shared" title="Visão Computacional: o que é e como funciona?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div class="media-content">
+                        <img src="imagens/ds-course.jpg" alt="Estudantes programando em laboratório">
+                        <div class="video-container">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/4W4gcTUsl_c" title="O que faz um desenvolvedor de sistemas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
-                </article>
-                <article>
-                    <h3>3. Processamento de Linguagem Natural (PLN)</h3>
-                    <p>O **PLN** permite que a IA compreenda, interprete e gere a linguagem humana. É o que possibilita a comunicação com assistentes virtuais como a Siri e a Alexa, além de ser a base para tradutores automáticos e chatbots inteligentes.</p>
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.https://www.youtube.com/watch?v=S6js-kYP72M" title="O que é Processamento de Linguagem Natural (PLN)?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                </article>
-                <article>
-                    <h3>4. IA Generativa</h3>
-                    <p>Uma das inovações mais recentes, a **IA Generativa** cria conteúdo original e novo. Modelos como **ChatGPT** para texto e **Midjourney** para imagens podem gerar arte, escrever roteiros e até compor músicas, expandindo a fronteira da criatividade humana.</p>
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/SjVlM3h2vU0" title="O que é IA Generativa?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                </article>
+                </div>
             </div>
         </section>
 
-        <hr>
-
-        <section id="setec-futuro">
-            <h2>SETEC 2045: IA</h2>
-            <p>Nessa Setec os alunos em grupos desmonstrão apresentaçãoes em slides, decoraçãoes com o tema e entre outros</p>
-            <p>Nesta edição, os participantes explorarão ambientes virtuais infinitos, co-criados em tempo real por um sistema de IA que interpreta os desejos e memórias dos usuários, transformando-os em paisagens, cidades e ecossistemas.</p>
+        <!-- SEGUNDA SEÇÃO: TEMAS DE IA -->
+        <section id="temas-ia" class="section dark">
+            <div class="container">
+                <h2>Temas de Inteligência Artificial</h2>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <h3>Machine Learning</h3>
+                        <p>O aprendizado de máquina é um subcampo da IA que se concentra no desenvolvimento de sistemas que podem aprender com dados, identificar padrões e tomar decisões com intervenção humana mínima.</p>
+                        <div class="video-container">
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/HcqpanDadyQ" title="Introdução ao Machine Learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Processamento de Linguagem Natural</h3>
+                        <p>O PLN permite que computadores entendam, interpretem e manipulem a linguagem humana. É a tecnologia por trás de assistentes virtuais, tradutores e análise de sentimentos.</p>
+                        <div class="video-container">
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/8S3qHHUKqYk" title="Processamento de Linguagem Natural" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Visão Computacional</h3>
+                        <p>Esta área permite que máquinas "vejam" e interpretem o mundo visual. Aplicações incluem reconhecimento facial, carros autônomos e diagnóstico médico por imagem.</p>
+                        <div class="video-container">
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/OcyRYUY2Xh8" title="Visão Computacional explicada" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Redes Neurais e Deep Learning</h3>
+                        <p>Inspiradas no cérebro humano, as redes neurais artificiais são a base do deep learning, permitindo avanços significativos em reconhecimento de voz, jogos e muito mais.</p>
+                        <div class="video-container">
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/aircAruvnKk" title="Redes Neurais explicadas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- TERCEIRA SEÇÃO: SETEC FUTURISTA -->
+        <section id="setec-futuro" class="section futuristic">
+            <div class="container">
+                <h2>SETEC: Visão Futurista</h2>
+                <div class="future-content">
+                    <div class="future-text">
+                        <p>Imagine a SETEC em 2030: um centro de excelência em educação tecnológica, onde salas de aula tradicionais deram lugar a ambientes de imersão digital, laboratórios de realidade aumentada e espaços colaborativos equipados com as mais avançadas ferramentas de desenvolvimento.</p>
+                        
+                        <p>Neste cenário futurista, a Inteligência Artificial estará integrada em todos os aspectos da experiência educacional:</p>
+                        
+                        <div class="ai-topic">
+                            <h3>Assistentes de IA Personalizados</h3>
+                            <p>Cada aluno terá um assistente de IA que adaptará o conteúdo educacional ao seu ritmo de aprendizagem, identificará dificuldades específicas e sugerirá exercícios personalizados para maximizar o aproveitamento.</p>
+                        </div>
+                        
+                        <p>Além disso, a SETEC se tornará um laboratório vivo para testar e implementar soluções inovadoras, preparando os estudantes não apenas para o mercado de trabalho atual, mas para criar as tecnologias do futuro.</p>
+                    </div>
+                    <div class="future-visual">
+                        <img src="imagens/setec-futuro.jpg" alt="Visão futurista da SETEC">
+                        <div class="hologram-effect"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-      
+        <div class="container">
+            <p>Projeto de Avaliação Front-End - Curso de Desenvolvimento de Sistemas - SETEC</p>
+            <p>© 2023 - Todos os direitos reservados</p>
+        </div>
     </footer>
-
 </body>
 </html>
