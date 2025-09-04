@@ -1,0 +1,128 @@
+/*
+ * Arquivo de estilos para a página principal.
+ * Use este arquivo para estilizar a página HTML.
+ */
+
+/* Variáveis de cores */
+:root {
+    --primary-color: #4a2d8e; /* Roxo escuro */
+    --secondary-color: #00bcd4; /* Ciano vibrante */
+    --background-color: #1a1a1a; /* Fundo escuro */
+    --text-color: #e0e0e0; /* Cinza claro */
+    --link-color: #00bcd4;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), #673ab7);
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+main {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: #2c2c2c;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid #444;
+}
+
+section h2, section h3 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+section p {
+    text-align: justify;
+}
+
+.ia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.ia-grid article {
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ia-grid article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para o contêiner de vídeos, garantindo a proporção */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #444;
+    margin: 3rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: #2c2c2c;
+    color: #999;
+    margin-top: 2rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
