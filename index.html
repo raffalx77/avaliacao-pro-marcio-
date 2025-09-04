@@ -4,47 +4,404 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso de Desenvolvimento de Sistemas - SETEC</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0d2235 0%, #16324e 100%);
+            color: #f0f6fc;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(90deg, #0a1929 0%, #0d2b4b 100%);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #4d9feb;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: #a8d1ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            color: #fff;
+            background: rgba(77, 159, 235, 0.2);
+        }
+        
+        /* Seções */
+        .section {
+            padding: 70px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #4d9feb;
+            margin-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #4d9feb, #2b6cb0);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+        
+        /* Primeira seção: Sobre o curso */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature i {
+            color: #4d9feb;
+            font-size: 1.2rem;
+        }
+        
+        .about-media {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 25px;
+        }
+        
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding-top: 56.25%; /* Proporção 16:9 */
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Segunda seção: Temas de IA */
+        .topics-section {
+            background: linear-gradient(135deg, #0f2c47 0%, #15314d 100%);
+        }
+        
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .topic-card {
+            background: rgba(13, 43, 72, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(77, 159, 235, 0.2);
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .topic-icon {
+            font-size: 2.5rem;
+            color: #4d9feb;
+            margin-bottom: 15px;
+        }
+        
+        .topic-card h3 {
+            color: #a8d1ff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .topic-card p {
+            margin-bottom: 20px;
+            color: #c3d9f3;
+        }
+        
+        /* Terceira seção: SETEC Futurista */
+        .future-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .future-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .future-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+        
+        .ai-topic {
+            background: rgba(77, 159, 235, 0.1);
+            border-left: 4px solid #4d9feb;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .ai-topic h3 {
+            color: #4d9feb;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .future-visual {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+        
+        .future-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(77, 159, 235, 0.3);
+        }
+        
+        .hologram-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(77, 159, 235, 0.2) 0%, transparent 50%, rgba(77, 159, 235, 0.2) 100%);
+            border-radius: 10px;
+            pointer-events: none;
+            animation: hologram 3s infinite alternate;
+        }
+        
+        @keyframes hologram {
+            0% {
+                opacity: 0.3;
+            }
+            100% {
+                opacity: 0.7;
+            }
+        }
+        
+        /* Rodapé */
+        footer {
+            background: #0a1929;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            color: #a8d1ff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #4d9feb;
+        }
+        
+        .footer-text {
+            color: #a8d1ff;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="imagens/logo-setec.png" alt="Logo SETEC" class="logo">
-            <h1>Curso de Desenvolvimento de Sistemas</h1>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="logo-text">Curso de DS - SETEC</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#sobre-curso">Sobre o Curso</a></li>
+                        <li><a href="#temas-ia">Temas de IA</a></li>
+                        <li><a href="#setec-futuro">SETEC Futurista</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#sobre-curso">Sobre o Curso</a></li>
-                <li><a href="#temas-ia">Temas de IA</a></li>
-                <li><a href="#setec-futuro">SETEC Futurista</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
         <!-- PRIMEIRA SEÇÃO: SOBRE O CURSO DE DS -->
         <section id="sobre-curso" class="section">
             <div class="container">
-                <h2>Curso Técnico em Desenvolvimento de Sistemas</h2>
-                <div class="content-wrapper">
-                    <div class="text-content">
+                <div class="section-title">
+                    <h2>Curso Técnico em Desenvolvimento de Sistemas</h2>
+                    <p>Formando os profissionais de tecnologia do futuro</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
                         <p>O curso técnico em Desenvolvimento de Sistemas da SETEC prepara os estudantes para atuarem no desenvolvimento de software, abrangendo desde a análise de requisitos até a implementação e manutenção de sistemas computacionais.</p>
                         
                         <p>Com uma abordagem prática e atualizada, o curso aborda linguagens de programação, banco de dados, desenvolvimento web, mobile e muito mais, sempre alinhado às demandas do mercado de trabalho.</p>
                         
-                        <p>Nossa grade curricular inclui:</p>
-                        <ul>
-                            <li>Lógica de programação e algoritmos</li>
-                            <li>Desenvolvimento front-end e back-end</li>
-                            <li>Banco de dados e SQL</li>
-                            <li>Engenharia de software e metodologias ágeis</li>
-                            <li>Desenvolvimento mobile</li>
-                            <li>Inteligência Artificial aplicada</li>
-                        </ul>
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-code"></i>
+                                <span>Lógica de Programação</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-database"></i>
+                                <span>Banco de Dados</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-globe"></i>
+                                <span>Desenvolvimento Web</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Desenvolvimento Mobile</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-brain"></i>
+                                <span>Inteligência Artificial</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>Metodologias Ágeis</span>
+                            </div>
+                        </div>
+                        
+                        <p>Nossa metodologia combina teoria e prática, com projetos reais que preparam os alunos para os desafios do mercado de trabalho, sempre com orientação de professores qualificados e infraestrutura moderna.</p>
                     </div>
-                    <div class="media-content">
-                        <img src="imagens/ds-course.jpg" alt="Estudantes programando em laboratório">
+                    <div class="about-media">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Laboratório de informática" class="about-image">
                         <div class="video-container">
                             <iframe width="100%" height="315" src="https://www.youtube.com/embed/4W4gcTUsl_c" title="O que faz um desenvolvedor de sistemas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
@@ -54,11 +411,17 @@
         </section>
 
         <!-- SEGUNDA SEÇÃO: TEMAS DE IA -->
-        <section id="temas-ia" class="section dark">
+        <section id="temas-ia" class="section topics-section">
             <div class="container">
-                <h2>Temas de Inteligência Artificial</h2>
+                <div class="section-title">
+                    <h2>Temas de Inteligência Artificial</h2>
+                    <p>Explorando as fronteiras da tecnologia</p>
+                </div>
                 <div class="topics-grid">
                     <div class="topic-card">
+                        <div class="topic-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
                         <h3>Machine Learning</h3>
                         <p>O aprendizado de máquina é um subcampo da IA que se concentra no desenvolvimento de sistemas que podem aprender com dados, identificar padrões e tomar decisões com intervenção humana mínima.</p>
                         <div class="video-container">
@@ -67,6 +430,9 @@
                     </div>
                     
                     <div class="topic-card">
+                        <div class="topic-icon">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
                         <h3>Processamento de Linguagem Natural</h3>
                         <p>O PLN permite que computadores entendam, interpretem e manipulem a linguagem humana. É a tecnologia por trás de assistentes virtuais, tradutores e análise de sentimentos.</p>
                         <div class="video-container">
@@ -75,6 +441,9 @@
                     </div>
                     
                     <div class="topic-card">
+                        <div class="topic-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
                         <h3>Visão Computacional</h3>
                         <p>Esta área permite que máquinas "vejam" e interpretem o mundo visual. Aplicações incluem reconhecimento facial, carros autônomos e diagnóstico médico por imagem.</p>
                         <div class="video-container">
@@ -83,6 +452,9 @@
                     </div>
                     
                     <div class="topic-card">
+                        <div class="topic-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
                         <h3>Redes Neurais e Deep Learning</h3>
                         <p>Inspiradas no cérebro humano, as redes neurais artificiais são a base do deep learning, permitindo avanços significativos em reconhecimento de voz, jogos e muito mais.</p>
                         <div class="video-container">
@@ -94,14 +466,17 @@
         </section>
 
         <!-- TERCEIRA SEÇÃO: SETEC FUTURISTA -->
-        <section id="setec-futuro" class="section futuristic">
+        <section id="setec-futuro" class="section">
             <div class="container">
-                <h2>SETEC: Visão Futurista</h2>
+                <div class="section-title">
+                    <h2>SETEC: Visão Futurista</h2>
+                    <p>Preparando para o futuro da tecnologia</p>
+                </div>
                 <div class="future-content">
                     <div class="future-text">
                         <p>Imagine a SETEC em 2030: um centro de excelência em educação tecnológica, onde salas de aula tradicionais deram lugar a ambientes de imersão digital, laboratórios de realidade aumentada e espaços colaborativos equipados com as mais avançadas ferramentas de desenvolvimento.</p>
                         
-                        <p>Neste cenário futurista, a Inteligência Artificial estará integrada em todos os aspectos da experiência educacional:</p>
+                        <p>Neste cenário futurista, a Inteligência Artificial estará integrada em todos os aspectos da experiência educacional, proporcionando um aprendizado personalizado e eficiente.</p>
                         
                         <div class="ai-topic">
                             <h3>Assistentes de IA Personalizados</h3>
@@ -111,8 +486,11 @@
                         <p>Além disso, a SETEC se tornará um laboratório vivo para testar e implementar soluções inovadoras, preparando os estudantes não apenas para o mercado de trabalho atual, mas para criar as tecnologias do futuro.</p>
                     </div>
                     <div class="future-visual">
-                        <img src="imagens/setec-futuro.jpg" alt="Visão futurista da SETEC">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Visão futurista da educação tecnológica" class="future-image">
                         <div class="hologram-effect"></div>
+                        <div class="video-container">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/4W4gcTUsl_c" title="O futuro da tecnologia na educação" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,8 +499,18 @@
 
     <footer>
         <div class="container">
-            <p>Projeto de Avaliação Front-End - Curso de Desenvolvimento de Sistemas - SETEC</p>
-            <p>© 2023 - Todos os direitos reservados</p>
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="footer-text">
+                    <p>Projeto de Avaliação Front-End - Curso de Desenvolvimento de Sistemas - SETEC</p>
+                    <p>© 2023 - Todos os direitos reservados</p>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
